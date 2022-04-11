@@ -1,0 +1,8 @@
+HISTORIA DE USUARIO 1: Ingresar el número de caracteres del código secreto y que se visualice el número ingresado.
+
+    1.1. Si se ingresa el número 4 como número de caracteres, mostrar el número 4.
+    1.2. Si no se ingresa algún número como  número de caracteres, mostrar el mensaje de <Número incorrecto de caracteres. Intente otra vez por favor>.
+    1.3. Si se ingresa el número 0 como número de caracteres, mostrar el mensaje de <Número incorrecto de caracteres. Intente otra vez por favor>.
+    1.4. Si se ingresa el número -1 como número de caracteres, mostrar el mensaje de <Número incorrecto de caracteres. Intente otra vez por favor>.
+    1.5. Si se ingresa el número 11 como número de caracteres, mostrar el mensaje de <Número incorrecto de caracteres. Intente otra vez por favor>.
+
