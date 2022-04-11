@@ -54,9 +54,9 @@ describe("VACAS Y TOROS", () => {
     //HISTORIAL DE USUARIO #3
 
     it("3.1. Si se selecciona el tipo de código <Números>, mostrar la elección <Números>", () => {
-        vacasToros.definirTipoDeCodigo("Números");
-        respuesta = vacasToros.getTipoDeCodigo("Números");
-        expect(respuesta).toEqual("Números");
+        vacasToros.definirTipoDeCodigo("Numeros");
+        respuesta = vacasToros.getTipoDeCodigo();
+        expect(respuesta).toEqual("Numeros");
     });
 
     
