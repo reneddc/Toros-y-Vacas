@@ -10,7 +10,7 @@ function definirNumeroDeCaracteres(numeroCar){
 }
 
 function controlarCantidadDeCaracteres(){
-    if (numeroCaracteres == 0 || numeroCaracteres == -1){
+    if (numeroCaracteres <= 1){
         numeroCaracteres = "Número incorrecto de caracteres. Intente otra vez por favor";
     }
 }
