@@ -31,11 +31,8 @@ class ExcepcionesVacasToros{
         return true;
     }
 
-    controlarCodigoSecretoNumero(codigoSecreto, numeroCaracteres){
+    controlarTipoCaracteresCodigoSecreto(codigoSecreto, numeroCaracteres){
         let caracterNumerico;
-        if(!this.esCodigoSecretoCompleto(codigoSecreto, numeroCaracteres)){
-            return "Código secreto incompleto";
-        }
         for(var i = 0; i < numeroCaracteres; i++){
             caracterNumerico = this.esCaracterNumerico(codigoSecreto[i]);
             if(!caracterNumerico){
@@ -43,6 +40,13 @@ class ExcepcionesVacasToros{
             }
         }
         return codigoSecreto;
+    }
+
+    controlarCodigoSecretoNumero(codigoSecreto, numeroCaracteres){
+        if(!this.esCodigoSecretoCompleto(codigoSecreto, numeroCaracteres)){
+            return "Código secreto incompleto";
+        }
+        return this.controlarTipoCaracteresCodigoSecreto(codigoSecreto, numeroCaracteres);
     }
 }
 
