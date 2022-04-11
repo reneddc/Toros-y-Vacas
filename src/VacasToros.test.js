@@ -5,7 +5,7 @@ describe("VACAS Y TOROS", () => {
     let vacasToros = new VacasToros();
     let respuesta;
 
-    //HISTORIAL DE USUARIO #1
+    //HISTORIAS DE USUARIO #1
 
     it("1.1. Si se ingresa el número 4 como número de caracteres, mostrar el número 4.", () => {
         vacasToros.definirNumeroDeCaracteres(4);
@@ -31,7 +31,7 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Número incorrecto de caracteres. Intente otra vez por favor");
     });
 
-    //HISTORIAL DE USUARIO #2
+    //HISTORIAS DE USUARIO #2
 
     it("2.1. Si se ingresa el número 4 como número máximo de intentos, mostrar el número 4.", () => {
         vacasToros.definirNumeroDeIntentos(5);
@@ -51,7 +51,7 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Número incorrecto de intentos. Intente otra vez por favor");
     });
 
-    //HISTORIAL DE USUARIO #3
+    //HISTORIAS DE USUARIO #3
 
     it("3.1. Si se selecciona el tipo de código <Números>, mostrar la elección <Números>", () => {
         vacasToros.definirTipoDeCodigo("Numeros");
@@ -59,6 +59,16 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Numeros");
     });
 
-    
+    //HISTORIAS DE USUARIO #4
+
+    //HISTORIAS DE USUARIO #5
+
+    it("5.1. Si se ingresa el código <4 5 7 8>, mostrar <4 5 7 8>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Numeros");
+        vacasToros.definirCodigoSecreto(['4','5','7','8']);
+        respuesta = vacasToros.getCodigoSecreto();
+        expect(respuesta).toEqual(['4','5','7','8']);
+    });
+
 
 });

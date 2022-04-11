@@ -28,6 +28,15 @@ function mostrarFormCodigoSecreto(numeroCar){
   for(var i=0; i<numeroCar; i++){
     formText += `<input type="text" id="caracter-${i}" size="1" maxlength="1">`;
   }
-  formText += `<input type="submit" value="Jugar"/>`;
+  formText += `<input type="submit" value="Jugar"/>   `;
+  formCodigoSecreto.innerHTML = formText;
+}
+
+function mostrarFormCodigoSecreto(numeroCar){
+  let formText = `<label for="codigo-1">Código secreto:</label>`;
+  for(var i=0; i<numeroCar; i++){
+    formText += `<input type="text" id="caracter-${i}" size="1" maxlength="1">`;
+  }
+  formText += `<input type="submit" value="Jugar"/>   `;
   formCodigoSecreto.innerHTML = formText;
 }

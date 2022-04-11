@@ -6,6 +6,7 @@ class VacasToros{
         this.numeroCaracteres;
         this.numeroIntentos;
         this.tipoDeCodigo;
+        this.codigoSecreto = [];
         this.Excepciones = new ExcepcionesVacasToros();
     }
 
@@ -21,6 +22,10 @@ class VacasToros{
 
     definirTipoDeCodigo(tipoCod){
         this.tipoDeCodigo = tipoCod;
+    }
+
+    definirCodigoSecreto(codigoSec){
+        this.codigoSecreto = codigoSec; 
     }
 
     definirConfiguracionTotal(numeroCar, numeroInt, tipoCod){
@@ -39,6 +44,10 @@ class VacasToros{
 
     getTipoDeCodigo(){
         return this.tipoDeCodigo;
+    }
+
+    getCodigoSecreto(){
+        return this.codigoSecreto;
     }
 }
 
