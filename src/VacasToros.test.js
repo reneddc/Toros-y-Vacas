@@ -45,4 +45,10 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Número incorrecto de intentos. Intente otra vez por favor");
     });
 
+    it("2.3. Si se ingresa el número -1 como número máximo de intentos, mostrar el mensaje de <Número incorrecto de intentos. Intente otra vez por favor>", () => {
+        vacasToros.definirNumeroDeIntentos(-1);
+        respuesta = vacasToros.getNumeroDeIntentos();
+        expect(respuesta).toEqual("Número incorrecto de intentos. Intente otra vez por favor");
+    });
+
 });
