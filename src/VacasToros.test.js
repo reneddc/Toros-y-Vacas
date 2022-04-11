@@ -1,8 +1,10 @@
-import {definirNumeroDeCaracteres, getNumeroDeCaracteres} from './VacasToros'
+import {definirNumeroDeCaracteres, getNumeroDeCaracteres, definirNumeroDeIntentos, getNumeroDeIntentos} from './VacasToros'
 
 describe("VACAS Y TOROS", () => {
 
     let respuesta;
+
+    //HISTORIAL DE USUARIO #1
 
     it("1.1. Si se ingresa el número 4 como número de caracteres, mostrar el número 4.", () => {
         definirNumeroDeCaracteres(4);
@@ -26,6 +28,14 @@ describe("VACAS Y TOROS", () => {
         definirNumeroDeCaracteres(11);
         respuesta = getNumeroDeCaracteres();
         expect(respuesta).toEqual("Número incorrecto de caracteres. Intente otra vez por favor");
+    });
+
+    //HISTORIAL DE USUARIO #2
+
+    it("2.1. Si se ingresa el número 4 como número máximo de intentos, mostrar el número 4.", () => {
+        definirNumeroDeIntentos(5);
+        respuesta = getNumeroDeIntentos();
+        expect(respuesta).toEqual(5);
     });
 
 });

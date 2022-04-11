@@ -1,4 +1,5 @@
 let numeroCaracteres;
+let numeroIntentos;
 const limiteInferior = 1;
 const limiteSuperior = 10;
 
@@ -18,5 +19,13 @@ function controlarCantidadDeCaracteres(){
     }
 }
 
+function definirNumeroDeIntentos(numeroInt){
+    numeroIntentos = numeroInt;
+}
 
-export {definirNumeroDeCaracteres, getNumeroDeCaracteres};
+function getNumeroDeIntentos(){
+    return numeroIntentos;
+}
+
+
+export {definirNumeroDeCaracteres, getNumeroDeCaracteres, definirNumeroDeIntentos, getNumeroDeIntentos};
