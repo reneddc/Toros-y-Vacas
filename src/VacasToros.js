@@ -5,6 +5,7 @@ class VacasToros{
     constructor(){
         this.numeroCaracteres;
         this.numeroIntentos;
+        this.tipoDeCodigo;
         this.Excepciones = new ExcepcionesVacasToros();
     }
 
@@ -18,12 +19,20 @@ class VacasToros{
         this.numeroIntentos = numeroInt;
     }
 
+    definirTipoDeCodigo(tipoCod){
+        this.tipoDeCodigo = tipoCod;
+    }
+
     getNumeroDeCaracteres(){
         return this.numeroCaracteres;
     }
     
     getNumeroDeIntentos(){
         return this.numeroIntentos;
+    }
+
+    getTipoDeCodigo(){
+        return this.tipoDeCodigo;
     }
 }
 

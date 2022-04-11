@@ -51,4 +51,14 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Número incorrecto de intentos. Intente otra vez por favor");
     });
 
+    //HISTORIAL DE USUARIO #3
+
+    it("3.1. Si se selecciona el tipo de código <Números>, mostrar la elección <Números>", () => {
+        vacasToros.definirTipoDeCodigo("Números");
+        respuesta = vacasToros.getTipoDeCodigo("Números");
+        expect(respuesta).toEqual("Números");
+    });
+
+    
+
 });

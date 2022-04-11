@@ -1,4 +1,5 @@
 import VacasToros from './VacasToros'
+import ExcepcionesVacasToros from './excepcionesVacasToros';
 
 const form = document.querySelector("#vista-1-form");
 const div = document.querySelector("#visualizaciones");
@@ -7,6 +8,7 @@ const inputNumeroCaracteres = document.querySelector("#numero-caracteres");
 const inputNumeroIntentos = document.querySelector("#numero-intentos");
 
 let vacasToros = new VacasToros();
+let excepcionesVacasToros = new ExcepcionesVacasToros();
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
