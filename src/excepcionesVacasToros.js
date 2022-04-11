@@ -33,7 +33,6 @@ class ExcepcionesVacasToros{
 
     controlarCodigoSecretoNumero(codigoSecreto, numeroCaracteres){
         let caracterNumerico;
-
         if(!this.esCodigoSecretoCompleto(codigoSecreto, numeroCaracteres)){
             return "Código secreto incompleto";
         }
