@@ -35,7 +35,6 @@ class ExcepcionesVacasToros{
 
     esNumeroOLetra(caracter, tipoCod){
         if(tipoCod == "Numeros"){
-            console.log(tipoCod);
             return this.esCaracterNumerico(caracter);
         }
         else{

@@ -25,14 +25,22 @@ class VacasToros{
     }
 
     definirCodigoSecreto(codigoSec){
+        codigoSec = this.convertirCodigoSecretoMayusculas(codigoSec);
         codigoSec = this.Excepciones.controlarCodigoSecretoNumero(codigoSec, this.numeroCaracteres, this.tipoDeCodigo);
         this.codigoSecreto = codigoSec; 
     }
 
-    definirConfiguracionTotal(numeroCar, numeroInt, tipoCod){
-        this.definirNumeroDeCaracteres(numeroCar);
+    definirConfiguracionTotal(nroCaracteres, numeroInt, tipCodigo){
+        this.definirNumeroDeCaracteres(nroCaracteres);
         this.definirNumeroDeIntentos(numeroInt);
-        this.definirTipoDeCodigo(tipoCod);
+        this.definirTipoDeCodigo(tipCodigo);
+    }
+
+    convertirCodigoSecretoMayusculas(codigoSec){
+        for(var i = 0; i < codigoSec.length; i++){
+            codigoSec[i] = codigoSec[i].toUpperCase();
+        }
+        return codigoSec;
     }
 
     getNumeroDeCaracteres(){

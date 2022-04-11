@@ -93,5 +93,12 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual(['A','B','C','D']);
     });
 
+    it("6.2. Si se ingresa el código <a b c d>, mostrar <A B C D>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras");
+        vacasToros.definirCodigoSecreto(['a','b','c','d']);
+        respuesta = vacasToros.getCodigoSecreto();
+        expect(respuesta).toEqual(['A','B','C','D']);
+    });
+
 
 });
