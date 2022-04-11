@@ -12,7 +12,7 @@ class FuncionesDeJuego{
     }
     
     generarCaracterNumerico(){
-        return Math.floor(Math.random() * 10)
+        return (Math.floor(Math.random() * 10)).toString();
     }
 
     generarCaracterLetra(){
@@ -20,13 +20,24 @@ class FuncionesDeJuego{
         return alphabet[Math.floor(Math.random() * alphabet.length)]
     }
 
+    generarCaracterLetraNumero(){
+        let letraNumero = Math.floor(Math.random() * 2);
+        if(letraNumero == 0){
+            return this.generarCaracterLetra();
+        }
+        return this.generarCaracterNumerico();
+    }
+
     generarCodigoSecretoAut(numeroCaracteres, tipoCodigo){
         this.codigoSecretoAutomatico = [];
+        let caracter;
         for(var i = 0; i < numeroCaracteres; i++){
             switch(tipoCodigo){
-                case "Numeros":{this.codigoSecretoAutomatico.push(this.generarCaracterNumerico());break;}
-                case "Letras": {this.codigoSecretoAutomatico.push(this.generarCaracterLetra());break;}
+                case "Numeros":{caracter = this.generarCaracterNumerico();break;}
+                case "Letras": {caracter = this.generarCaracterLetra();break;}
+                case "Combinado": {caracter = this.generarCaracterLetraNumero();break;}
             }
+            this.codigoSecretoAutomatico.push(caracter);
         }
         return this.codigoSecretoAutomatico;
     }
@@ -47,7 +58,6 @@ class FuncionesDeJuego{
             return this.generarCodigoVacio(numeroCaracteres);
         }
     }
-
 }
 
 export default FuncionesDeJuego;
