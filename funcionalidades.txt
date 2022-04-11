@@ -14,3 +14,9 @@ HISTORIA DE USUARIO 2: Ingresar el número máximo de intentos para adivinar el 
 HISTORIA DE USUARIO 3: Ingresar el tipo de código con el que se va a jugar: Números, Letras o Combinado.
     TESTS:
     3.1. Si se selecciona el tipo de código “Números”, mostrar la elección “Números”.
+
+HISTORIA DE USUARIO 4: Ingresar los valores de número de caracteres, número máximo de intentos y el tipo de código y 
+                    mostrar la opción de ingresar código con el número de caracteres permitidos.
+    TESTS:
+    ----------------------Interfaz de Usuario--------------------------
+

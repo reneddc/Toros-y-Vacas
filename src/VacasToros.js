@@ -23,6 +23,12 @@ class VacasToros{
         this.tipoDeCodigo = tipoCod;
     }
 
+    definirConfiguracionTotal(numeroCar, numeroInt, tipoCod){
+        this.definirNumeroDeCaracteres(numeroCar);
+        this.definirNumeroDeIntentos(numeroInt);
+        this.definirTipoDeCodigo(tipoCod);
+    }
+
     getNumeroDeCaracteres(){
         return this.numeroCaracteres;
     }
