@@ -77,5 +77,12 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Código secreto inválido. La configuración del juego es de Tipo: Números");
     });
 
+    it("5.3. Si se ingresa el código <1 2>, mostrar el mensaje <Código secreto incompleto>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Numeros");
+        vacasToros.definirCodigoSecreto(['1', '2']);
+        respuesta = vacasToros.getCodigoSecreto();
+        expect(respuesta).toEqual("Código secreto incompleto");
+    });
+
 
 });

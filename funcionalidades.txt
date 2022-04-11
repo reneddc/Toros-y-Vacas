@@ -23,8 +23,8 @@ HISTORIA DE USUARIO 4: Ingresar los valores de número de caracteres, número m�
 HISTORIA DE USUARIO 5: Ingresar el código secreto con la configuración de tipo “Números” y que muestre el código dividido por caracteres (lista de caracteres).
     TESTS:
     **Para todos los tests: Se ingresa el número 4 como número de caracteres, el número 6 como número máximo de intentos y se selecciona el tipo de código “Números”
-    3.1. Si se ingresa el código “4 5 7 8”, mostrar “4 5 7 8”.
-    3.2. Si se ingresa el código “A B C D”, mostrar el mensaje “Código secreto inválido. La configuración del juego es de Tipo: Números”.
-    3.3. Si se ingresa el código “1 2”, mostrar el mensaje “Código secreto incompleto”.
+    5.1. Si se ingresa el código “4 5 7 8”, mostrar “4 5 7 8”.
+    5.2. Si se ingresa el código “A B C D”, mostrar el mensaje “Código secreto inválido. La configuración del juego es de Tipo: Números”.
+    5.3. Si se ingresa el código “1 2”, mostrar el mensaje “Código secreto incompleto”.
 
 

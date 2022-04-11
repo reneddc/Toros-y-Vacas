@@ -19,6 +19,10 @@ class ExcepcionesVacasToros{
         return numeroIntentos;
     }
 
+    esCodigoSecretoCompleto(codigoSecreto, numeroCaracteres){
+        return codigoSecreto.length == numeroCaracteres;
+    }
+
     esCaracterNumerico(caracter){
         let numero = parseInt(caracter);
         if(isNaN(numero)){
@@ -29,9 +33,12 @@ class ExcepcionesVacasToros{
 
     controlarCodigoSecretoNumero(codigoSecreto, numeroCaracteres){
         let caracterNumerico;
+
+        if(!this.esCodigoSecretoCompleto(codigoSecreto, numeroCaracteres)){
+            return "Código secreto incompleto";
+        }
         for(var i = 0; i < numeroCaracteres; i++){
             caracterNumerico = this.esCaracterNumerico(codigoSecreto[i]);
-            console.log(caracterNumerico);
             if(!caracterNumerico){
                 return "Código secreto inválido. La configuración del juego es de Tipo: Números";
             }
