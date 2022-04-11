@@ -1,5 +1,11 @@
-function definirNumeroDeCaracteres(numeroCar){
-    return numeroCar;
+let numeroCaracteres;
+
+function getNumeroDeCaracteres(){
+    return numeroCaracteres;
 }
 
-export default definirNumeroDeCaracteres;
+function definirNumeroDeCaracteres(numeroCar){
+    numeroCaracteres = numeroCar;
+}
+
+export {definirNumeroDeCaracteres, getNumeroDeCaracteres};
