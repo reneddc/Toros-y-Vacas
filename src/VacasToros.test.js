@@ -130,5 +130,10 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual(['A','B','1','2']);
     });
 
-    
+    it("7.3. Si se ingresa el código <A 4>, mostrar el mensaje <Código secreto incompleto>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras");
+        vacasToros.definirCodigoSecreto(['A','4']);
+        respuesta = vacasToros.getCodigoSecreto();
+        expect(respuesta).toEqual("Código secreto incompleto");
+    });
 });
