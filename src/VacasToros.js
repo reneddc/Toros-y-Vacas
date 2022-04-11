@@ -20,6 +20,13 @@ class VacasToros{
     
     definirNumeroDeIntentos(numeroInt){
         this.numeroIntentos = numeroInt;
+        this.controlarCantidadDeIntentos()
+    }
+
+    controlarCantidadDeIntentos(){
+        if (this.numeroIntentos < this.limiteInferior){
+            this.numeroIntentos = "Número incorrecto de intentos. Intente otra vez por favor";
+        }
     }
 
     getNumeroDeCaracteres(){

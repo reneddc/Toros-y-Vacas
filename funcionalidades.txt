@@ -8,5 +8,5 @@ HISTORIA DE USUARIO 1: Ingresar el número de caracteres del código secreto y q
 HISTORIA DE USUARIO 2: Ingresar el número máximo de intentos para adivinar el código secreto y que se visualice el número ingresado.
     TESTS:
     2.1. Si se ingresa el número 4 como número máximo de intentos, mostrar el número 4.
-    2.2. Si se ingresa el número 0 como número máximo de intentos, mostrar el mensaje de “Número incorrecto de intentos. Intente otra vez por favor”.
-    2.3. Si se ingresa el número -1 como número máximo de intentos, mostrar el mensaje de “Número incorrecto de intentos. Intente otra vez por favor”.
+    2.2. Si se ingresa el número 0 como número máximo de intentos, mostrar el mensaje de <Número incorrecto de intentos. Intente otra vez por favor>.
+    2.3. Si se ingresa el número -1 como número máximo de intentos, mostrar el mensaje de <Número incorrecto de intentos. Intente otra vez por favor>.
