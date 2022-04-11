@@ -24,6 +24,15 @@ function mostrarFormCodigoSecreto(numeroCar){
   formCodigoSecreto.innerHTML = formText;
 }
 
+function limpiarVista(vista){
+  switch(vista){
+    case 1:{formCodigoSecreto.innerHTML = ""; formConfiguracion.innerHTML = ""; div.innerHTML = ""; break;}
+    case 2:{}
+    case 3:{}
+    case 4:{}
+  }
+}
+
 
 formConfiguracion.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -35,7 +44,7 @@ formConfiguracion.addEventListener("submit", (event) => {
 
   vacasToros.definirConfiguracionTotal(numeroCaracteres, numeroIntentos, tipoCodigo, codigoAutomatico);
   mostrarFormCodigoSecreto(numeroCaracteres);
-  div.innerHTML = ``;
+  div.innerHTML = "";
 });
 
 
@@ -47,5 +56,10 @@ formCodigoSecreto.addEventListener("submit", (event) => {
     codigoSecreto.push(listaCaracteres[i].value);
   }
   vacasToros.definirCodigoSecreto(codigoSecreto);
-  div.innerHTML = `<p> CÓDIGO:  ${vacasToros.getCodigoSecreto()}</p>`;
+  let codigoSecretoFinal = vacasToros.getCodigoSecreto();
+  div.innerHTML = `<p> CÓDIGO:  ${codigoSecretoFinal}</p>`;
+
+  if(typeof(codigoSecretoFinal) != "string"){
+    limpiarVista(1);
+  }
 });

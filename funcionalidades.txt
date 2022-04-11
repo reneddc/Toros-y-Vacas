@@ -56,3 +56,9 @@ HISTORIA DE USUARIO 10: Generar el código automáticamente del tipo <Combinado>
     TESTS:
     **Para todos los tests: Se ingresa el número 4 como número de caracteres, el número 6 como número máximo de intentos y se selecciona el tipo de código “Combinado”
     10.1. Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con letras de la letra <a> a la <z> o números del <0> al <9> generados aleatoriamente como <4 S 8 Y>.
+
+HISTORIA DE USUARIO 11: Presionar el botón jugar y que se muestre la vista del adivinador.
+    TESTS:
+    ----------------------Interfaz de Usuario--------------------------
+
+
