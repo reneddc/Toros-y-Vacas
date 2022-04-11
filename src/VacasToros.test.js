@@ -14,4 +14,10 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Número incorrecto de caracteres. Intente otra vez por favor");
     });
 
+    it("1.3. Si se ingresa el número -1 como número de caracteres, mostrar el mensaje de <Número incorrecto de caracteres. Intente otra vez por favor>.", () => {
+        definirNumeroDeCaracteres(-1);
+        let respuesta = getNumeroDeCaracteres();
+        expect(respuesta).toEqual("Número incorrecto de caracteres. Intente otra vez por favor");
+    });
+
 });
