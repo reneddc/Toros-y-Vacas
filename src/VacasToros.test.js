@@ -114,4 +114,14 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Código secreto incompleto");
     });
 
+    //HISTORIAS DE USUARIO #7
+
+    it("7.1. Si se ingresa el código <A B 1 2>, mostrar <A B 1 2>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Combinado");
+        vacasToros.definirCodigoSecreto(['A','B','1','2']);
+        respuesta = vacasToros.getCodigoSecreto();
+        expect(respuesta).toEqual(['A','B','1','2']);
+    });
+
+
 });
