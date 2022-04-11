@@ -4,6 +4,13 @@ class FuncionesDeJuego{
         this.codigoSecretoAutomatico = [];
     }
 
+    convertirCodigoSecretoMayusculas(codigoSec){
+        for(var i = 0; i < codigoSec.length; i++){
+            codigoSec[i] = codigoSec[i].toString().toUpperCase();
+        }
+        return codigoSec;
+    }
+
     generarCodigoVacio(numeroCaracteres){
         this.codigoSecretoAutomatico = [];
         for(var i = 0; i < numeroCaracteres; i++){

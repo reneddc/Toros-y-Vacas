@@ -38,11 +38,10 @@ class VacasToros{
         else{
             this.codigoSecreto = this.FuncionesJuego.generarCodigoVacio(this.numeroCaracteres);
         }
-        console.log(this.codigoSecreto);
     }
 
     definirCodigoSecreto(codigoSec){
-        codigoSec = this.convertirCodigoSecretoMayusculas(codigoSec);
+        codigoSec = this.FuncionesJuego.convertirCodigoSecretoMayusculas(codigoSec);
         codigoSec = this.Excepciones.controlarCodigoSecretoNumero(codigoSec, this.numeroCaracteres, this.tipoDeCodigo); 
         this.codigoSecreto = codigoSec;
     }
@@ -53,13 +52,6 @@ class VacasToros{
         this.definirTipoDeCodigo(tipCodigo);
         this.definirGeneracionDeCodigoAutomatico(genAutomatico);
         this.definirCodigoSecretoPorDefault();
-    }
-
-    convertirCodigoSecretoMayusculas(codigoSec){
-        for(var i = 0; i < codigoSec.length; i++){
-            codigoSec[i] = codigoSec[i].toString().toUpperCase();
-        }
-        return codigoSec;
     }
 
     getNumeroDeCaracteres(){
