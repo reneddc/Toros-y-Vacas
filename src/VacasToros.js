@@ -1,3 +1,4 @@
+import FuncionesDeJuego from "./funcionesJuegoVacasToros";
 import ExcepcionesVacasToros from "./excepcionesVacasToros";
 
 class VacasToros{
@@ -6,8 +7,10 @@ class VacasToros{
         this.numeroCaracteres;
         this.numeroIntentos;
         this.tipoDeCodigo;
+        this.generarCodigoAutomatico;
         this.codigoSecreto = [];
         this.Excepciones = new ExcepcionesVacasToros();
+        this.FuncionesJuego = new FuncionesDeJuego();
     }
 
     definirNumeroDeCaracteres(numeroCar){
@@ -24,16 +27,32 @@ class VacasToros{
         this.tipoDeCodigo = tipoCod;
     }
 
-    definirCodigoSecreto(codigoSec){
-        codigoSec = this.convertirCodigoSecretoMayusculas(codigoSec);
-        codigoSec = this.Excepciones.controlarCodigoSecretoNumero(codigoSec, this.numeroCaracteres, this.tipoDeCodigo);
-        this.codigoSecreto = codigoSec; 
+    definirGeneracionDeCodigoAutomatico(genAutomatico){
+        this.generarCodigoAutomatico = genAutomatico;
     }
 
-    definirConfiguracionTotal(nroCaracteres, numeroInt, tipCodigo){
+    definirCodigoSecretoPorDefault(){
+        if(this.generarCodigoAutomatico){
+            this.codigoSecreto = this.FuncionesJuego.generarCodigoNumeros(this.numeroCaracteres);
+        }
+        else{
+            this.codigoSecreto = this.FuncionesJuego.generarCodigoVacio(this.numeroCaracteres);
+        }
+        console.log(this.codigoSecreto);
+    }
+
+    definirCodigoSecreto(codigoSec){
+        codigoSec = this.convertirCodigoSecretoMayusculas(codigoSec);
+        codigoSec = this.Excepciones.controlarCodigoSecretoNumero(codigoSec, this.numeroCaracteres, this.tipoDeCodigo); 
+        this.codigoSecreto = codigoSec;
+    }
+
+    definirConfiguracionTotal(nroCaracteres, numeroInt, tipCodigo, genAutomatico){
         this.definirNumeroDeCaracteres(nroCaracteres);
         this.definirNumeroDeIntentos(numeroInt);
         this.definirTipoDeCodigo(tipCodigo);
+        this.definirGeneracionDeCodigoAutomatico(genAutomatico);
+        this.definirCodigoSecretoPorDefault();
     }
 
     convertirCodigoSecretoMayusculas(codigoSec){
