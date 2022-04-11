@@ -27,4 +27,13 @@ HISTORIA DE USUARIO 5: Ingresar el código secreto con la configuración de tipo
     5.2. Si se ingresa el código “A B C D”, mostrar el mensaje “Código secreto inválido. La configuración del juego es de Tipo: Números”.
     5.3. Si se ingresa el código “1 2”, mostrar el mensaje “Código secreto incompleto”.
 
+HISTORIA DE USUARIO 6: Ingresar el código secreto con la configuración de tipo “Letras” y que muestre el código dividido por caracteres (lista de caracteres).
+    TESTS:
+    **Para todos los tests: Se ingresa el número 4 como número de caracteres, el número 6 como número máximo de intentos y se selecciona el tipo de código “Letras”
+    6.1. Si se ingresa el código “A B C D”, mostrar “A B C D”.
+    6.2. Si se ingresa el código “a b c d”, mostrar “A B C D”.
+    6.3. Si se ingresa el código “1 2 3 0”, mostrar el mensaje “Código secreto inválido. La configuración del juego es de Tipo: Letras”.
+    6.4. Si se ingresa el código “A B”, mostrar el mensaje “Código secreto incompleto”.
+
+
 

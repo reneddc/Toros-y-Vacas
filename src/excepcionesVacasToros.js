@@ -25,28 +25,43 @@ class ExcepcionesVacasToros{
 
     esCaracterNumerico(caracter){
         let numero = parseInt(caracter);
-        if(isNaN(numero)){
-            return false;
-        }
-        return true;
+        return !isNaN(numero);
     }
 
-    controlarTipoCaracteresCodigoSecreto(codigoSecreto, numeroCaracteres){
-        let caracterNumerico;
+    esCaracterLetra(caracter){
+        let ascii = caracter.toUpperCase().charCodeAt(0);
+        return ascii > 64 && ascii < 91;
+    }
+
+    esNumeroOLetra(caracter, tipoCod){
+        if(tipoCod == "Numeros"){
+            console.log(tipoCod);
+            return this.esCaracterNumerico(caracter);
+        }
+        else{
+            if(tipoCod == "Letras"){
+                return this.esCaracterLetra(caracter);
+            }
+            return true;
+        }
+    }
+
+    controlarTipoCaracteresCodigoSecreto(codigoSecreto, numeroCaracteres, tipoCodigo){
+        let numeroLetra;
         for(var i = 0; i < numeroCaracteres; i++){
-            caracterNumerico = this.esCaracterNumerico(codigoSecreto[i]);
-            if(!caracterNumerico){
-                return "Código secreto inválido. La configuración del juego es de Tipo: Números";
+            numeroLetra = this.esNumeroOLetra(codigoSecreto[i], tipoCodigo);
+            if(!numeroLetra){
+                return `Código secreto inválido. La configuración del juego es de Tipo: ${tipoCodigo}`;
             }
         }
         return codigoSecreto;
     }
 
-    controlarCodigoSecretoNumero(codigoSecreto, numeroCaracteres){
+    controlarCodigoSecretoNumero(codigoSecreto, numeroCaracteres, tipoCodigo){
         if(!this.esCodigoSecretoCompleto(codigoSecreto, numeroCaracteres)){
             return "Código secreto incompleto";
         }
-        return this.controlarTipoCaracteresCodigoSecreto(codigoSecreto, numeroCaracteres);
+        return this.controlarTipoCaracteresCodigoSecreto(codigoSecreto, numeroCaracteres, tipoCodigo);
     }
 }
 
