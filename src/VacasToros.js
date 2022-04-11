@@ -33,7 +33,7 @@ class VacasToros{
 
     definirCodigoSecretoPorDefault(){
         if(this.generarCodigoAutomatico){
-            this.codigoSecreto = this.FuncionesJuego.generarCodigoNumeros(this.numeroCaracteres);
+            this.codigoSecreto = this.FuncionesJuego.generarCodigoSecretoAut(this.numeroCaracteres, this.tipoDeCodigo);
         }
         else{
             this.codigoSecreto = this.FuncionesJuego.generarCodigoVacio(this.numeroCaracteres);

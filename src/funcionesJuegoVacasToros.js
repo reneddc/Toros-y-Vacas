@@ -19,10 +19,13 @@ class FuncionesDeJuego{
         return this.codigoSecretoAutomatico;
     }
 
-    generarCodigoNumeros(numeroCaracteres){
+    generarCodigoSecretoAut(numeroCaracteres, tipoCodigo){
         this.codigoSecretoAutomatico = [];
         for(var i = 0; i < numeroCaracteres; i++){
-            this.codigoSecretoAutomatico.push(this.generarCaracterNumerico());
+            switch(tipoCodigo){
+                case "Numeros":{this.codigoSecretoAutomatico.push(this.generarCaracterNumerico());break;}
+                case "Letras": {this.codigoSecretoAutomatico.push(this.generarCaracterLetra());break;}
+            }
         }
         return this.codigoSecretoAutomatico;
     }
@@ -30,6 +33,12 @@ class FuncionesDeJuego{
     generarCaracterNumerico(){
         return Math.floor(Math.random() * 10)
     }
+
+    generarCaracterLetra(){
+        const alphabet = "abcdefghijklmnopqrstuvwxyz";
+        return alphabet[Math.floor(Math.random() * alphabet.length)]
+    }
+
 }
 
 export default FuncionesDeJuego;

@@ -37,8 +37,17 @@ HISTORIA DE USUARIO 6: Ingresar el código secreto con la configuración de tipo
 
 HISTORIA DE USUARIO 7: Ingresar el código secreto con la configuración de tipo “Combinado” y que muestre el código dividido por caracteres (lista de caracteres).
     TESTS:
-    **Para todos los tests: Se ingresa el número 4 como número de caracteres, el número 6 como número máximo de intentos y se selecciona el tipo de código “Letras”
+    **Para todos los tests: Se ingresa el número 4 como número de caracteres, el número 6 como número máximo de intentos y se selecciona el tipo de código “Combinado”
     7.1. Si se ingresa el código “A B 1 2”, mostrar “A B 1 2”.
     7.2. Si se ingresa el código “a b 1 2”, mostrar “A B 1 2”.
     7.3. Si se ingresa el código “A 4”, mostrar el mensaje “Código secreto incompleto”.
 
+HISTORIA DE USUARIO 8: Generar el código automáticamente del tipo “Números” y que se muestre el resultado en las casillas del código secreto.
+    TESTS:
+    **Para todos los tests: Se ingresa el número 4 como número de caracteres, el número 6 como número máximo de intentos y se selecciona el tipo de código “Números”
+    8.1. Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con 4 números del <0> al <9> generados aleatoriamente como <4 8 0 6>.
+
+HISTORIA DE USUARIO 9: Generar el código automáticamente del tipo “Letras” y que se muestre el resultado en las casillas del código secreto.
+    TESTS:
+    **Para todos los tests: Se ingresa el número 4 como número de caracteres, el número 6 como número máximo de intentos y se selecciona el tipo de código “Letras”
+    9.1. Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con 4 letras de la letra <a> a la <z> generados aleatoriamente como <W S P D>.

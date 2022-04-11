@@ -140,8 +140,18 @@ describe("VACAS Y TOROS", () => {
     //HISTORIAS DE USUARIO #8
 
     it("8.1. Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con 4 números del <0> al <9> generados aleatoriamente como <4 8 0 6>", () => {
-        vacasToros.definirConfiguracionTotal(4, 6, "Combinado", true);
+        vacasToros.definirConfiguracionTotal(4, 6, "Numeros", true);
         respuesta = vacasToros.getCodigoSecreto();
+        console.log(respuesta);
+        expect(respuesta).toEqual(vacasToros.getCodigoSecreto());
+    });
+
+    //HISTORIAS DE USUARIO #9
+
+    it("9.1. Si se selecciona la opción de <Código automático>, mostrar un código de 4 caracteres con 4 letras de la letra <a> a la <z> generados aleatoriamente como <W S P D>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", true);
+        respuesta = vacasToros.getCodigoSecreto();
+        console.log(respuesta);
         expect(respuesta).toEqual(vacasToros.getCodigoSecreto());
     });
 });
