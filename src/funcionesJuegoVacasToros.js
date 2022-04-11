@@ -10,13 +10,14 @@ class FuncionesDeJuego{
         }
         return codigoSec;
     }
+    
+    generarCaracterNumerico(){
+        return Math.floor(Math.random() * 10)
+    }
 
-    generarCodigoVacio(numeroCaracteres){
-        this.codigoSecretoAutomatico = [];
-        for(var i = 0; i < numeroCaracteres; i++){
-            this.codigoSecretoAutomatico.push("");
-        }
-        return this.codigoSecretoAutomatico;
+    generarCaracterLetra(){
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        return alphabet[Math.floor(Math.random() * alphabet.length)]
     }
 
     generarCodigoSecretoAut(numeroCaracteres, tipoCodigo){
@@ -30,13 +31,21 @@ class FuncionesDeJuego{
         return this.codigoSecretoAutomatico;
     }
 
-    generarCaracterNumerico(){
-        return Math.floor(Math.random() * 10)
+    generarCodigoVacio(numeroCaracteres){
+        this.codigoSecretoAutomatico = [];
+        for(var i = 0; i < numeroCaracteres; i++){
+            this.codigoSecretoAutomatico.push("");
+        }
+        return this.codigoSecretoAutomatico;
     }
 
-    generarCaracterLetra(){
-        const alphabet = "abcdefghijklmnopqrstuvwxyz";
-        return alphabet[Math.floor(Math.random() * alphabet.length)]
+    generarCodigoSecretoPorDefault(numeroCaracteres, tipoCodigo, generarCodAut){
+        if(generarCodAut){
+            return this.generarCodigoSecretoAut(numeroCaracteres, tipoCodigo);
+        }
+        else{
+            return this.generarCodigoVacio(numeroCaracteres);
+        }
     }
 
 }
