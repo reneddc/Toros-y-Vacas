@@ -20,7 +20,16 @@ class ExcepcionesVacasToros{
     }
 
     esCodigoSecretoCompleto(codigoSecreto, numeroCaracteres){
-        return codigoSecreto.length == numeroCaracteres;
+        for (var i = 0; i < numeroCaracteres; i++){
+            if(this.esCaracterVacio(codigoSecreto[i])){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    esCaracterVacio(caracter){
+        return caracter == "" || caracter == undefined;
     }
 
     esCaracterNumerico(caracter){
@@ -33,6 +42,10 @@ class ExcepcionesVacasToros{
         return ascii > 64 && ascii < 91;
     }
 
+    esCaracterCombinado(caracter){
+        return this.esCaracterLetra(caracter) || this.esCaracterNumerico(caracter);
+    }
+
     esNumeroOLetra(caracter, tipoCod){
         if(tipoCod == "Numeros"){
             return this.esCaracterNumerico(caracter);
@@ -41,7 +54,7 @@ class ExcepcionesVacasToros{
             if(tipoCod == "Letras"){
                 return this.esCaracterLetra(caracter);
             }
-            return true;
+            return this.esCaracterCombinado(caracter);
         }
     }
 

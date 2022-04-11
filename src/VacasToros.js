@@ -38,7 +38,7 @@ class VacasToros{
 
     convertirCodigoSecretoMayusculas(codigoSec){
         for(var i = 0; i < codigoSec.length; i++){
-            codigoSec[i] = codigoSec[i].toUpperCase();
+            codigoSec[i] = codigoSec[i].toString().toUpperCase();
         }
         return codigoSec;
     }
