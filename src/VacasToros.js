@@ -1,31 +1,34 @@
-let numeroCaracteres;
-let numeroIntentos;
-const limiteInferior = 1;
-const limiteSuperior = 10;
+class VacasToros{
 
+    constructor(){
+        this.numeroCaracteres;
+        this.numeroIntentos;
+        this.limiteInferior = 1;
+        this.limiteSuperior = 10;
+    }
 
-function getNumeroDeCaracteres(){
-    return numeroCaracteres;
-}
+    definirNumeroDeCaracteres(numeroCar){
+        this.numeroCaracteres = numeroCar;
+        this.controlarCantidadDeCaracteres();
+    }
+    
+    controlarCantidadDeCaracteres(){
+        if (this.numeroCaracteres < this.limiteInferior || this.numeroCaracteres > this.limiteSuperior){
+            this.numeroCaracteres = "Número incorrecto de caracteres. Intente otra vez por favor";
+        }
+    }
+    
+    definirNumeroDeIntentos(numeroInt){
+        this.numeroIntentos = numeroInt;
+    }
 
-function definirNumeroDeCaracteres(numeroCar){
-    numeroCaracteres = numeroCar;
-    controlarCantidadDeCaracteres();
-}
-
-function controlarCantidadDeCaracteres(){
-    if (numeroCaracteres < limiteInferior || numeroCaracteres > limiteSuperior){
-        numeroCaracteres = "Número incorrecto de caracteres. Intente otra vez por favor";
+    getNumeroDeCaracteres(){
+        return this.numeroCaracteres;
+    }
+    
+    getNumeroDeIntentos(){
+        return this.numeroIntentos;
     }
 }
 
-function definirNumeroDeIntentos(numeroInt){
-    numeroIntentos = numeroInt;
-}
-
-function getNumeroDeIntentos(){
-    return numeroIntentos;
-}
-
-
-export {definirNumeroDeCaracteres, getNumeroDeCaracteres, definirNumeroDeIntentos, getNumeroDeIntentos};
+export default VacasToros;
