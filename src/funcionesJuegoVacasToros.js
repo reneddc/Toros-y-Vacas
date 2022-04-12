@@ -2,7 +2,6 @@ class FuncionesDeJuego{
 
     constructor(){
         this.codigoSecretoAutomatico = [];
-        this.resultadoIntento = [];
     }
 
     convertirCodigoSecretoMayusculas(codigoSec){
@@ -61,10 +60,19 @@ class FuncionesDeJuego{
         }
     }
 
-    generarResultadoDeIntento(numeroCaracteres, resultadoIntento){
+    generarVacas(codigoSecreto, intentoCodigo, resultadoDeIntento){
+        for(var i = 0; i < codigoSecreto.length; i++){
+            if(codigoSecreto[i] == intentoCodigo[0]){
+                resultadoDeIntento[0] = "V";
+            }
+        }
+        return resultadoDeIntento;
+    }
+
+    generarResultadoDeIntento(numeroCaracteres, resultadoIntento, codigoSecreto, intentoCodigo){
         if(!this.esError(resultadoIntento)){
-            this.resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
-            return this.resultadoIntento;
+            resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
+            resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
         }
         return resultadoIntento;
     }

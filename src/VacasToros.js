@@ -58,8 +58,7 @@ class VacasToros{
 
     definirResultadoDeIntento(){
         this.resultadoDeIntento = this.Excepciones.controlarCodigoSecreto(this.intentoCodigo, this.numeroCaracteres, this.tipoDeCodigo);
-        this.resultadoDeIntento = this.FuncionesJuego.generarResultadoDeIntento(this.numeroCaracteres, this.resultadoDeIntento);
-        //this.resultadoDeIntento = this.FuncionesJuego.generarVacas(this.intentoCodigo, this.resultadoDeIntento, this.codigoSecreto);
+        this.resultadoDeIntento = this.FuncionesJuego.generarResultadoDeIntento(this.numeroCaracteres, this.resultadoDeIntento, this.codigoSecreto, this.intentoCodigo);
     }
 
     getNumeroDeCaracteres(){
