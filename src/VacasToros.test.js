@@ -326,4 +326,6 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual(['T', 'T', 'T', 'T']);
     });
 
+    //HISTORIAS DE USUARIO #18
+
 });

@@ -17,7 +17,7 @@ function getVista1(){
 }
 
 function getVista2(numeroCar){
-    let vista2 = `<label for="codigo-1">Código secreto: </label>`;
+    let vista2 = `<br><br><label for="codigo-1">Código secreto: </label>`;
     for(var i=0; i<numeroCar; i++){
       vista2 += `<input type="text" class="caracter" size="1" maxlength="1">`;
     }
@@ -25,4 +25,20 @@ function getVista2(numeroCar){
     return vista2;
 }
 
-export {getVista1, getVista2}
+function getVista2Historial(intento, resultado, historial, numeroCar){
+    for(var i=0; i<numeroCar; i++){
+        if(resultado[i] == "V"){
+            historial += `<input style="background-color: gold;" type="text" class="car" size="1" maxlength="1" value="${intento[i]}">`;
+        }
+        if(resultado[i] == "T"){
+            historial += `<input style="background-color: rgb(18, 235, 235);" type="text" class="car" size="1" maxlength="1" value="${intento[i]}">`;
+        }
+        if(resultado[i] == "O"){
+            historial += `<input style="background-color: white;" type="text" class="car" size="1" maxlength="1" value="${intento[i]}">`;
+        }
+    }
+    historial += "<br><br>";
+    return historial;
+}
+
+export {getVista1, getVista2, getVista2Historial}
