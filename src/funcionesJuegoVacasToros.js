@@ -69,18 +69,25 @@ class FuncionesDeJuego{
         return resultadoDeIntento;
     }
 
-    generarResultadoDeIntento(numeroCaracteres, resultadoIntento, codigoSecreto, intentoCodigo){
-        if(!this.esError(resultadoIntento)){
-            resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
-            resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
+    generarToros(codigoSecreto, intentoCodigo, resultadoDeIntento){
+        if(codigoSecreto[0] == intentoCodigo[0]){
+            resultadoDeIntento[0] = "T";
         }
-        return resultadoIntento;
+        return resultadoDeIntento;
     }
 
     esError(resultadoIntento){
         return typeof(resultadoIntento) == "string";
     }
 
+    generarResultadoDeIntento(numeroCaracteres, resultadoIntento, codigoSecreto, intentoCodigo){
+        if(!this.esError(resultadoIntento)){
+            resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
+            /*resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
+            resultadoIntento = this.generarToros(codigoSecreto, intentoCodigo, resultadoIntento);*/
+        }
+        return resultadoIntento;
+    }
 }
 
 export default FuncionesDeJuego;

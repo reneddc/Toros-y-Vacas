@@ -222,9 +222,8 @@ describe("VACAS Y TOROS", () => {
 
     it("13.2. Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <w y o c>, debería mostrar la respuesta como <v o o o>", () => {
         vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
-        vacasToros.definirCodigoSecreto(['P', 'T', 'W', 'C']);
-        vacasToros.definirIntento(['W', 'Y', 'O', 'C']);
-        respuesta = vacasToros.getResultadoDeIntento();
+        respuesta = funcionesVacasToros.generarCodigoVacioYLleno(4,"O");
+        respuesta = funcionesVacasToros.generarVacas(['P', 'T', 'W', 'C'],['W', 'Y', 'O', 'C'],respuesta);
         expect(respuesta).toEqual(['V', 'O', 'O', 'O']);
     });
 
@@ -238,5 +237,11 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual(['O', 'O', 'O', 'O']);
     });
 
+    it("14.2. Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <p y o c>, debería mostrar la respuesta como <t o o o>.", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
+        respuesta = funcionesVacasToros.generarCodigoVacioYLleno(4,"O");
+        respuesta = funcionesVacasToros.generarToros(['P', 'T', 'W', 'C'],['P', 'Y', 'O', 'C'],respuesta);
+        expect(respuesta).toEqual(['T', 'O', 'O', 'O']);
+    });
 
 });

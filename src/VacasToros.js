@@ -52,6 +52,7 @@ class VacasToros{
     }
 
     definirIntento(intentoCodigo){
+        intentoCodigo = this.FuncionesJuego.convertirCodigoSecretoMayusculas(intentoCodigo);
         this.intentoCodigo = intentoCodigo;
         this.definirResultadoDeIntento();
     }
