@@ -284,4 +284,13 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual(['T', 'O', 'T', 'O']);
     });
 
+    it("16.2. Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <w y o n>, debería mostrar la respuesta como <o o o o>.", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
+        respuesta = funcionesVacasToros.generarCodigoVacioYLleno(4,"O");
+        console.log(respuesta);
+        respuesta = funcionesVacasToros.generarToros(['P', 'T', 'W', 'C'],['T', 'Y', 'P', 'P'], respuesta);
+        console.log(respuesta);
+        expect(respuesta).toEqual(['O', 'O', 'O', 'O']);
+    });
+
 });
