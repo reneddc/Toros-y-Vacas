@@ -92,6 +92,10 @@ class VacasToros{
     getIntentosRealizados(){
         return this.intentosRealizados;
     }
+
+    comprobarJuego(){
+        return this.FuncionesJuego.comprobarGanador(this.numeroCaracteres);
+    }
 }
 
 export default VacasToros;

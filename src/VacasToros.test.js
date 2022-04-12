@@ -345,4 +345,13 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("1 / 6 Intentos");
     });
 
+    //HISTORIAS DE USUARIO #20
+
+    it("20.1. Si el código secreto es <p t w c>, el tipo de código es “Letras”, el número de intentos es 10 y se ingresa como intento el código <p t w c> en el primer intento, debería mostrar el mensaje <Ganador>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
+        vacasToros.definirCodigoSecreto(['P', 'W', 'T', 'C']);
+        vacasToros.definirIntento(['P', 'W', 'T', 'C']);
+        respuesta = vacasToros.comprobarJuego();
+        expect(respuesta).toEqual("Ganador");
+    });
 });

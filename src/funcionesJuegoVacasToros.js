@@ -2,6 +2,7 @@ class FuncionesDeJuego{
 
     constructor(){
         this.numeroIntentosRealizados;
+        this.numeroToros = 0;
         this.codigoSecretoAutomatico = [];
         this.listaRepetidos = [];
     }
@@ -80,11 +81,13 @@ class FuncionesDeJuego{
 
     generarToros(codigoSecreto, intentoCodigo, resultadoDeIntento){
         this.listaRepetidos = [];
+        this.numeroToros = 0;
         this.listaRepetidos = this.generarCodigoVacioYLleno(codigoSecreto.length, false);
         for(var  i= 0; i < intentoCodigo.length; i++){
             if(codigoSecreto[i] == intentoCodigo[i]){
                 this.listaRepetidos[i] = true;
                 resultadoDeIntento[i] = "T";
+                this.numeroToros++;
             }
         }
         return resultadoDeIntento;
@@ -107,6 +110,17 @@ class FuncionesDeJuego{
     generarIntentosRealizados(numeroIntentos){
         let intentosRealizados = `${this.numeroIntentosRealizados} / ${numeroIntentos} Intentos`;
         return intentosRealizados;
+    }
+
+    sonTodosToros(numeroCaracteres){
+        return this.numeroToros == numeroCaracteres;
+    }
+
+    comprobarGanador(numeroCaracteres){
+        if(this.sonTodosToros(numeroCaracteres)){
+            return "Ganador";
+        }
+        return "Continua";
     }
 }
 
