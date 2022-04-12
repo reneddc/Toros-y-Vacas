@@ -9,6 +9,7 @@ class VacasToros{
         this.tipoDeCodigo;
         this.generarCodigoAutomatico;
         this.codigoSecreto = [];
+        this.intentoCodigo = [];
         this.resultadoDeIntento = [];
         this.Excepciones = new ExcepcionesVacasToros();
         this.FuncionesJuego = new FuncionesDeJuego();
@@ -38,7 +39,7 @@ class VacasToros{
 
     definirCodigoSecreto(codigoSec){
         codigoSec = this.FuncionesJuego.convertirCodigoSecretoMayusculas(codigoSec);
-        codigoSec = this.Excepciones.controlarCodigoSecretoNumero(codigoSec, this.numeroCaracteres, this.tipoDeCodigo); 
+        codigoSec = this.Excepciones.controlarCodigoSecreto(codigoSec, this.numeroCaracteres, this.tipoDeCodigo); 
         this.codigoSecreto = codigoSec;
     }
 
@@ -51,7 +52,13 @@ class VacasToros{
     }
 
     definirIntento(intentoCodigo){
+        this.intentoCodigo = intentoCodigo;
+        this.definirResultadoDeIntento();
+    }
+
+    definirResultadoDeIntento(){
         this.resultadoDeIntento = this.FuncionesJuego.generarResultadoDeIntento(this.numeroCaracteres);
+        this.resultadoDeIntento = this.Excepciones.controlarIntentoCodigoSecreto(this.intentoCodigo, this.numeroCaracteres, this.tipoDeCodigo, this.resultadoDeIntento);
     }
 
     getNumeroDeCaracteres(){
