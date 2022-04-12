@@ -4,6 +4,7 @@ import { getVista1, getVista2, getVista2Historial , getVista3, getVista4} from '
 const formConfiguracion = document.querySelector("#vista-1-form");
 const formCodigoSecreto = document.querySelector("#codigo-secreto-form");
 const formIntentosCodigoSecreto = document.querySelector("#intentos-codigo-secreto-form");
+const formReiniciar = document.querySelector("#reiniciar-form");
 const div = document.querySelector("#visualizaciones");
 const divHistorialIntentos = document.querySelector("#historial-intentos");
 
@@ -124,4 +125,9 @@ formIntentosCodigoSecreto.addEventListener("submit", (event) => {
     mostrarVista(2);
   }
   comprobarJuego(comprobarGanador);
+});
+
+formReiniciar.addEventListener("submit", (event) => {
+  event.preventDefault();
+  location.reload();
 });
