@@ -66,5 +66,4 @@ formCodigoSecreto.addEventListener("submit", (event) => {
   else{
     limpiarVista(1);
   }
-  //div.innerHTML = `<p> CÓDIGO:  ${codigoSecretoFinal}</p>`;
 });
