@@ -1,5 +1,5 @@
 import VacasToros from './VacasToros'
-import { getVista1, getVista2, getVista2Historial } from './vistas';
+import { getVista1, getVista2, getVista2Historial , getVista3} from './vistas';
 
 const formConfiguracion = document.querySelector("#vista-1-form");
 const formCodigoSecreto = document.querySelector("#codigo-secreto-form");
@@ -35,7 +35,7 @@ function mostrarFormCodigoSecreto(numeroCar){
 function limpiarVista(vista){
   switch(vista){
     case 1:{formCodigoSecreto.innerHTML = ""; formConfiguracion.innerHTML = ""; div.innerHTML = ""; break;}
-    case 2:{}
+    case 2:{formIntentosCodigoSecreto.innerHTML = ""; divHistorialIntentos.innerHTML = ""; div.innerHTML = ""; break;}
     case 3:{}
     case 4:{}
   }
@@ -45,8 +45,15 @@ function mostrarVista(vista){
   switch(vista){
     case 1:{formCodigoSecreto.innerHTML = getVista1(); break;}
     case 2:{formIntentosCodigoSecreto.innerHTML = getVista2(numeroCaracteres, numeroIntentosRealizados); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
-    case 3:{}
+    case 3:{formIntentosCodigoSecreto.innerHTML = getVista3(numeroCaracteres, numeroIntentosRealizados, codigoSecreto); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
     case 4:{}
+  }
+}
+
+function comprobarJuego(jugador){
+  if (jugador == "Ganador"){
+    limpiarVista(2);
+    mostrarVista(3);
   }
 }
 
@@ -103,6 +110,7 @@ formIntentosCodigoSecreto.addEventListener("submit", (event) => {
   vacasToros.definirIntento(intento);
   numeroIntentosRealizados = vacasToros.getIntentosRealizados();
   resultadoDeIntento = vacasToros.getResultadoDeIntento();
+  let comprobarGanador = vacasToros.comprobarJuego();
 
   if(typeof(resultadoDeIntento) == "string"){
     div.innerHTML = `<p> RESULTADO INTENTO:  ${resultadoDeIntento} </p>`;
@@ -111,4 +119,5 @@ formIntentosCodigoSecreto.addEventListener("submit", (event) => {
     historialIntentos = getVista2Historial(intento, resultadoDeIntento, historialIntentos, numeroCaracteres);
     mostrarVista(2);
   }
+  comprobarJuego(comprobarGanador);
 });

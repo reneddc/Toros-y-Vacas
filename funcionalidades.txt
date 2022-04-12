@@ -107,4 +107,6 @@ HISTORIA DE USUARIO 19: Mostrar un contador de intentos.
     19.1. Si el adivinador no ingresó ningún intento, debería mostrar “0/10 intentos”.
     19.2. Si el adivinador ingresó un intento, debería mostrar “1/10 intentos”.
 
-     
+HISTORIA DE USUARIO 20: Mostrar la vista de juego ganado, si se ingresa el código correcto (todos “toros”) antes de cumplir el límite de intentos.
+    TESTS:
+    20.1. Si el código secreto es <p t w c>, el tipo de código es “Letras”, el número de intentos es 10 y se ingresa como intento el código <p t w c> en el primer intento, debería mostrar el mensaje "Ganador".

@@ -42,4 +42,13 @@ function getVista2Historial(intento, resultado, historial, numeroCar){
     return historial;
 }
 
-export {getVista1, getVista2, getVista2Historial}
+function getVista3(numeroCar, nroIntentosRealizados, codigo){
+    let vista3 = `<br><br><h1>GANADOR!</h1><br><br><label for="codigo-1">Código secreto: </label>`;
+    for(var i=0; i<numeroCar; i++){
+      vista3 += `<input style="background-color: rgb(18, 235, 235); type="text" class="caracter" size="1" maxlength="1" value="${codigo[i]}">`;
+    }
+    vista3 += `<p>${nroIntentosRealizados}</p><br><br>`;
+    return vista3;
+}
+
+export {getVista1, getVista2, getVista2Historial, getVista3}

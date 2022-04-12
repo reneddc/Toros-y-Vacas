@@ -354,4 +354,5 @@ describe("VACAS Y TOROS", () => {
         respuesta = vacasToros.comprobarJuego();
         expect(respuesta).toEqual("Ganador");
     });
+
 });
