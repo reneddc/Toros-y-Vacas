@@ -373,10 +373,11 @@ describe("VACAS Y TOROS", () => {
     });
 
     it("ej.1. Si el código secreto es <1 2 3 4>, el tipo de código es “numeros” y se ingresa como intento el código <2 5 7 8>, debería mostrar la respuesta como <# o o o>, sólo aplicable en la primera posición", () => {
-        vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
-        vacasToros.definirCodigoSecreto(['1', '2', '3', '4']);
+        vacasToros.definirConfiguracionTotal(4, 6, "Numeros", false);
+        vacasToros.definirCodigoSecreto(['1', '2', '3', '9']);
         vacasToros.definirIntento(['2', '3', '4', '0']);
         respuesta = vacasToros.getResultadoDeIntento();
-        expect(respuesta).toEqual(['O', 'V', '#', 'O']);
+        console.log(respuesta);
+        expect(respuesta).toEqual(['V', 'V', '#', 'O']);
     });
 });
