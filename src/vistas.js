@@ -16,12 +16,13 @@ function getVista1(){
     return vista1;
 }
 
-function getVista2(numeroCar){
+function getVista2(numeroCar, nroIntentosRealizados){
     let vista2 = `<br><br><label for="codigo-1">Código secreto: </label>`;
     for(var i=0; i<numeroCar; i++){
       vista2 += `<input type="text" class="caracter" size="1" maxlength="1">`;
     }
-    vista2 += `<input type="submit" value="Adivinar"/>   `;
+    vista2 += `<input type="submit" value="Adivinar"/><br><br>`;
+    vista2 += `<p>${nroIntentosRealizados}</p><br><br>`;
     return vista2;
 }
 

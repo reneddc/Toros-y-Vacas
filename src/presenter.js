@@ -16,6 +16,7 @@ let vacasToros = new VacasToros();
 let codigoSecreto = [];
 let intento = [];
 let resultadoDeIntento = [];
+let numeroIntentosRealizados;
 let historialIntentos = "";
 let numeroCaracteres;
 
@@ -43,7 +44,7 @@ function limpiarVista(vista){
 function mostrarVista(vista){
   switch(vista){
     case 1:{formCodigoSecreto.innerHTML = getVista1(); break;}
-    case 2:{formIntentosCodigoSecreto.innerHTML = getVista2(numeroCaracteres); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
+    case 2:{formIntentosCodigoSecreto.innerHTML = getVista2(numeroCaracteres, numeroIntentosRealizados); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
     case 3:{}
     case 4:{}
   }
@@ -81,6 +82,7 @@ formCodigoSecreto.addEventListener("submit", (event) => {
     div.innerHTML = `<p> CÓDIGO:  ${codigoSecretoFinal}</p>`;
   }
   else{
+    numeroIntentosRealizados = vacasToros.getIntentosRealizados();
     limpiarVista(1);
     mostrarVista(2);
   }
@@ -99,6 +101,7 @@ formIntentosCodigoSecreto.addEventListener("submit", (event) => {
   }
 
   vacasToros.definirIntento(intento);
+  numeroIntentosRealizados = vacasToros.getIntentosRealizados();
   resultadoDeIntento = vacasToros.getResultadoDeIntento();
 
   if(typeof(resultadoDeIntento) == "string"){

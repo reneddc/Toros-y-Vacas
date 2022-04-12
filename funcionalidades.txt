@@ -102,5 +102,9 @@ HISTORIA DE USUARIO 18: Ingresar varios intentos de código secreto y que se vis
     TESTS:
     ----------------------Interfaz de Usuario--------------------------
         
+HISTORIA DE USUARIO 19: Mostrar un contador de intentos.
+    TESTS:
+    19.1. Si el adivinador no ingresó ningún intento, debería mostrar “0/10 intentos”.
+    19.2. Si el adivinador ingresó un intento, debería mostrar “1/10 intentos”.
 
      
