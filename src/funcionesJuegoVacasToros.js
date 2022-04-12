@@ -1,6 +1,7 @@
 class FuncionesDeJuego{
 
     constructor(){
+        this.numeroIntentosRealizados = 0;
         this.codigoSecretoAutomatico = [];
         this.listaRepetidos = [];
     }
@@ -99,6 +100,11 @@ class FuncionesDeJuego{
             resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
         }
         return resultadoIntento;
+    }
+
+    generarIntentosRealizados(numeroIntentos){
+        let intentosRealizados = `${this.numeroIntentosRealizados} / ${numeroIntentos} Intentos`;
+        return intentosRealizados;
     }
 }
 

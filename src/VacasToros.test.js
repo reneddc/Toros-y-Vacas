@@ -328,4 +328,13 @@ describe("VACAS Y TOROS", () => {
 
     //HISTORIAS DE USUARIO #18
 
+    //HISTORIAS DE USUARIO #19
+
+    it("19.1. Si el adivinador no ingresó ningún intento, debería mostrar <0/10 intentos>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
+        vacasToros.definirCodigoSecreto(['P', 'W', 'T', 'C']);
+        respuesta = vacasToros.getIntentosRealizados();
+        expect(respuesta).toEqual("0 / 6 Intentos");
+    });
+
 });
