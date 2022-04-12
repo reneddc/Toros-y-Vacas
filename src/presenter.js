@@ -47,7 +47,7 @@ function mostrarVista(vista){
     case 1:{formCodigoSecreto.innerHTML = getVista1(); break;}
     case 2:{formIntentosCodigoSecreto.innerHTML = getVista2(numeroCaracteres, numeroIntentosRealizados); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
     case 3:{formIntentosCodigoSecreto.innerHTML = getVista3(numeroCaracteres, numeroIntentosRealizados, codigoSecreto); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; formReiniciar.innerHTML = volverAJugar(); break;}
-    case 4:{formIntentosCodigoSecreto.innerHTML = getVista4(numeroCaracteres, numeroIntentosRealizados, codigoSecreto); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
+    case 4:{formIntentosCodigoSecreto.innerHTML = getVista4(numeroCaracteres, numeroIntentosRealizados, codigoSecreto); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; formReiniciar.innerHTML = volverAJugar();break;}
   }
 }
 
