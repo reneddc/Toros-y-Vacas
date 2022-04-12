@@ -240,7 +240,7 @@ describe("VACAS Y TOROS", () => {
     it("14.2. Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <p y o c>, debería mostrar la respuesta como <t o o o>.", () => {
         vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
         respuesta = funcionesVacasToros.generarCodigoVacioYLleno(4,"O");
-        respuesta = funcionesVacasToros.generarToros(['P', 'T', 'W', 'C'],['P', 'Y', 'O', 'C'],respuesta);
+        respuesta = funcionesVacasToros.generarToros(['P', 'T', 'W', 'C'],['P', 'Y', 'O', 'N'],respuesta);
         expect(respuesta).toEqual(['T', 'O', 'O', 'O']);
     });
 
@@ -271,6 +271,17 @@ describe("VACAS Y TOROS", () => {
         respuesta = funcionesVacasToros.generarVacas(['P', 'T', 'W', 'C'], ['T', 'C', 'P', 'W'], respuesta);
         console.log(respuesta);
         expect(respuesta).toEqual(['V', 'V', 'V', 'V']);
+    });
+
+    //HISTORIAS DE USUARIO #16
+
+    it("16.1. Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <p y w t>, debería mostrar la respuesta como <t o t o>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
+        respuesta = funcionesVacasToros.generarCodigoVacioYLleno(4,"O");
+        console.log(respuesta);
+        respuesta = funcionesVacasToros.generarToros(['P', 'T', 'W', 'C'],['P', 'Y', 'W', 'T'], respuesta);
+        console.log(respuesta);
+        expect(respuesta).toEqual(['T', 'O', 'T', 'O']);
     });
 
 });

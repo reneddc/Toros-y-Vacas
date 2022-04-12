@@ -78,8 +78,10 @@ class FuncionesDeJuego{
     }
 
     generarToros(codigoSecreto, intentoCodigo, resultadoDeIntento){
-        if(codigoSecreto[0] == intentoCodigo[0]){
-            resultadoDeIntento[0] = "T";
+        for(var  i= 0; i < intentoCodigo.length; i++){
+            if(codigoSecreto[i] == intentoCodigo[i]){
+                resultadoDeIntento[i] = "T";
+            }
         }
         return resultadoDeIntento;
     }
