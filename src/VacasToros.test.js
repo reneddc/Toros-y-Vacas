@@ -320,4 +320,12 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual(['O', 'O', 'O', 'O']);
     });
 
+    it("17.3. Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <p t w c>, debería mostrar la respuesta como <t t t t>.", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
+        vacasToros.definirCodigoSecreto(['P', 'W', 'T', 'C']);
+        vacasToros.definirIntento(['P', 'W', 'T', 'C']);
+        respuesta = vacasToros.getResultadoDeIntento();
+        expect(respuesta).toEqual(['T', 'T', 'T', 'T']);
+    });
+
 });
