@@ -194,4 +194,12 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("Código secreto inválido. La configuración del juego es de Tipo: Numeros");
     });
 
+    it("12.4. Si el código secreto es <7 8 0 1>, el tipo de código es “Combinado” y se ingresa como intento el código <p t 0 c>, mostrar la respuesta como <o o o o>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Combinado", true);
+        vacasToros.definirCodigoSecreto(['7', '8', '0', '1']);
+        vacasToros.definirIntento(['P', 'T', '0', 'C']);
+        respuesta = vacasToros.getResultadoDeIntento();
+        expect(respuesta).toEqual(['O', 'O', 'O', 'O']);
+    });
+
 });
