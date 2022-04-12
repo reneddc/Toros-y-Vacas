@@ -116,9 +116,16 @@ class FuncionesDeJuego{
         return this.numeroToros == numeroCaracteres;
     }
 
-    comprobarGanador(numeroCaracteres){
+    seCumplioLosIntentos(numeroIntentos){
+        return this.numeroIntentosRealizados == numeroIntentos;
+    }
+
+    comprobarGanador(numeroCaracteres, numeroIntentos){
         if(this.sonTodosToros(numeroCaracteres)){
             return "Ganador";
+        }
+        if(this.seCumplioLosIntentos(numeroIntentos)){
+            return "Perdedor";
         }
         return "Continua";
     }

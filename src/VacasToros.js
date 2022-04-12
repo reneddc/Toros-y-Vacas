@@ -94,7 +94,7 @@ class VacasToros{
     }
 
     comprobarJuego(){
-        return this.FuncionesJuego.comprobarGanador(this.numeroCaracteres);
+        return this.FuncionesJuego.comprobarGanador(this.numeroCaracteres, this.numeroIntentos);
     }
 }
 
