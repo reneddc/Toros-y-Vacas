@@ -60,4 +60,9 @@ function getVista4(numeroCar, nroIntentosRealizados, codigo){
     return vista4;
 }
 
-export {getVista1, getVista2, getVista2Historial, getVista3, getVista4}
+function volverAJugar(){
+    let botton = `<input type="submit" value="Volver a Jugar"/>`;
+    return botton;
+}
+
+export {getVista1, getVista2, getVista2Historial, getVista3, getVista4, volverAJugar}
