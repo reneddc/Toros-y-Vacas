@@ -1,8 +1,10 @@
 import VacasToros from './VacasToros'
+import { getVista1, getVista2 } from './vistas';
 
 const formConfiguracion = document.querySelector("#vista-1-form");
 const div = document.querySelector("#visualizaciones");
 const formCodigoSecreto = document.querySelector("#codigo-secreto-form");
+const formIntentosCodigoSecreto = document.querySelector("#intentos-codigo-secreto-form");
 
 const inputNumeroCaracteres = document.querySelector("#numero-caracteres");
 const inputNumeroIntentos = document.querySelector("#numero-intentos");
@@ -11,6 +13,9 @@ const inputCodigoAutomatico = document.querySelector("#automatico");
 
 let vacasToros = new VacasToros();
 let codigoSecreto = [];
+let intento = [];
+let resultadoDeIntento = [];
+let numeroCaracteres;
 
 
 function mostrarFormCodigoSecreto(numeroCar){
@@ -33,11 +38,20 @@ function limpiarVista(vista){
   }
 }
 
+function mostrarVista(vista){
+  switch(vista){
+    case 1:{formCodigoSecreto.innerHTML = getVista1(); break;}
+    case 2:{formIntentosCodigoSecreto.innerHTML = getVista2(numeroCaracteres); break;}
+    case 3:{}
+    case 4:{}
+  }
+}
+
 
 formConfiguracion.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  let numeroCaracteres = inputNumeroCaracteres.value;
+  numeroCaracteres = inputNumeroCaracteres.value;
   let numeroIntentos = inputNumeroIntentos.value;
   let tipoCodigo = inputTipoCodigo.value;
   let codigoAutomatico = inputCodigoAutomatico.checked;
@@ -60,10 +74,29 @@ formCodigoSecreto.addEventListener("submit", (event) => {
   vacasToros.definirCodigoSecreto(codigoSecreto);
   let codigoSecretoFinal = vacasToros.getCodigoSecreto();
 
+
   if(typeof(codigoSecretoFinal) == "string"){
     div.innerHTML = `<p> CÓDIGO:  ${codigoSecretoFinal}</p>`;
   }
   else{
     limpiarVista(1);
+    mostrarVista(2);
   }
+});
+
+
+
+formIntentosCodigoSecreto.addEventListener("submit", (event) => {
+  event.preventDefault();
+  intento = [];
+  resultadoDeIntento = [];
+  let listaCaracteres = document.querySelectorAll(".caracter");
+
+  for(var i = 0; i < listaCaracteres.length; i++){
+    intento.push(listaCaracteres[i].value);
+  }
+
+  vacasToros.definirIntento(intento);
+  resultadoDeIntento = vacasToros.getResultadoDeIntento();
+  div.innerHTML = `<p> RESULTADO INTENTO:  ${resultadoDeIntento} </p>`;
 });

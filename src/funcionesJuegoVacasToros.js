@@ -2,6 +2,7 @@ class FuncionesDeJuego{
 
     constructor(){
         this.codigoSecretoAutomatico = [];
+        this.listaRepetidos = [];
     }
 
     convertirCodigoSecretoMayusculas(codigoSec){
@@ -61,13 +62,11 @@ class FuncionesDeJuego{
     }
 
     generarVacas(codigoSecreto, intentoCodigo, resultadoDeIntento){
-        let listaRepetidos = this.generarCodigoVacioYLleno(codigoSecreto.length, false);
-        
         for(var  intCod= 0; intCod < intentoCodigo.length; intCod++){
             for(var codSec = 0; codSec < codigoSecreto.length; codSec++){
-                if(!listaRepetidos[codSec]){
+                if(!this.listaRepetidos[codSec]){
                     if(codigoSecreto[codSec] == intentoCodigo[intCod]){
-                        listaRepetidos[codSec] = true;
+                        this.listaRepetidos[codSec] = true;
                         resultadoDeIntento[intCod] = "V";
                         break;
                     }
@@ -78,8 +77,11 @@ class FuncionesDeJuego{
     }
 
     generarToros(codigoSecreto, intentoCodigo, resultadoDeIntento){
+        this.listaRepetidos = [];
+        this.listaRepetidos = this.generarCodigoVacioYLleno(codigoSecreto.length, false);
         for(var  i= 0; i < intentoCodigo.length; i++){
             if(codigoSecreto[i] == intentoCodigo[i]){
+                this.listaRepetidos[i] = true;
                 resultadoDeIntento[i] = "T";
             }
         }
@@ -93,8 +95,8 @@ class FuncionesDeJuego{
     generarResultadoDeIntento(numeroCaracteres, resultadoIntento, codigoSecreto, intentoCodigo){
         if(!this.esError(resultadoIntento)){
             resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
-            resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
             resultadoIntento = this.generarToros(codigoSecreto, intentoCodigo, resultadoIntento);
+            resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
         }
         return resultadoIntento;
     }
