@@ -93,8 +93,8 @@ class FuncionesDeJuego{
     generarResultadoDeIntento(numeroCaracteres, resultadoIntento, codigoSecreto, intentoCodigo){
         if(!this.esError(resultadoIntento)){
             resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
-            /*resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
-            resultadoIntento = this.generarToros(codigoSecreto, intentoCodigo, resultadoIntento);*/
+            resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
+            resultadoIntento = this.generarToros(codigoSecreto, intentoCodigo, resultadoIntento);
         }
         return resultadoIntento;
     }
