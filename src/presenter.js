@@ -52,14 +52,19 @@ formCodigoSecreto.addEventListener("submit", (event) => {
   event.preventDefault();
   codigoSecreto = [];
   let listaCaracteres = document.querySelectorAll(".caracter");
+
   for(var i = 0; i < listaCaracteres.length; i++){
     codigoSecreto.push(listaCaracteres[i].value);
   }
+
   vacasToros.definirCodigoSecreto(codigoSecreto);
   let codigoSecretoFinal = vacasToros.getCodigoSecreto();
-  div.innerHTML = `<p> CÓDIGO:  ${codigoSecretoFinal}</p>`;
 
-  if(typeof(codigoSecretoFinal) != "string"){
+  if(typeof(codigoSecretoFinal) == "string"){
+    div.innerHTML = `<p> CÓDIGO:  ${codigoSecretoFinal}</p>`;
+  }
+  else{
     limpiarVista(1);
   }
+  //div.innerHTML = `<p> CÓDIGO:  ${codigoSecretoFinal}</p>`;
 });

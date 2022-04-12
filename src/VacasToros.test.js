@@ -1,8 +1,10 @@
 import VacasToros from './VacasToros'
+import FuncionesDeJuego from "./funcionesJuegoVacasToros"
 
 describe("VACAS Y TOROS", () => {
 
     let vacasToros = new VacasToros();
+    let funcionesVacasToros = new FuncionesDeJuego();
     let respuesta;
 
     //HISTORIAS DE USUARIO #1
@@ -162,6 +164,18 @@ describe("VACAS Y TOROS", () => {
         respuesta = vacasToros.getCodigoSecreto();
         console.log(respuesta);
         expect(respuesta).toEqual(vacasToros.getCodigoSecreto());
+    });
+
+    //HISTORIAS DE USUARIO #11
+
+    //HISTORIAS DE USUARIO #12
+
+    it("12.1. Si el código secreto es <p t w c>, el tipo de código es “Letras” y se ingresa como intento el código <x y o c>, mostrar la respuesta como <o o o o>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", true);
+        vacasToros.definirCodigoSecreto(['P', 'T', 'W', 'C']);
+        vacasToros.definirIntento(['X', 'Y', 'O', 'C']);
+        respuesta = vacasToros.getResultadoDeIntento();
+        expect(respuesta).toEqual(['O', 'O', 'O', 'O']);
     });
 
 

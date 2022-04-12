@@ -2,6 +2,7 @@ class FuncionesDeJuego{
 
     constructor(){
         this.codigoSecretoAutomatico = [];
+        this.resultadoIntento = [];
     }
 
     convertirCodigoSecretoMayusculas(codigoSec){
@@ -57,6 +58,14 @@ class FuncionesDeJuego{
         else{
             return this.generarCodigoVacio(numeroCaracteres);
         }
+    }
+
+    generarResultadoDeIntento(numeroCaracteres){
+        this.resultadoIntento = [];
+        for(var i = 0; i < numeroCaracteres; i++){
+            this.resultadoIntento.push("O");
+        }
+        return this.resultadoIntento;
     }
 }
 
