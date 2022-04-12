@@ -126,3 +126,6 @@ HISTORIA DE USUARIO 23: En la vista de juego ganado presionar volver a jugar, bo
 HISTORIA DE USUARIO 24: En la vista de juego perdido presionar volver a jugar, borrar los datos del juego anterior y mostrar la vista  de configuración de las reglas del juego.
     TESTS:
     ----------------------Interfaz de Usuario--------------------------
+
+
+Prueba commit
