@@ -1,5 +1,5 @@
 import VacasToros from './VacasToros'
-import { getVista1, getVista2, getVista2Historial , getVista3} from './vistas';
+import { getVista1, getVista2, getVista2Historial , getVista3, getVista4} from './vistas';
 
 const formConfiguracion = document.querySelector("#vista-1-form");
 const formCodigoSecreto = document.querySelector("#codigo-secreto-form");
@@ -36,8 +36,8 @@ function limpiarVista(vista){
   switch(vista){
     case 1:{formCodigoSecreto.innerHTML = ""; formConfiguracion.innerHTML = ""; div.innerHTML = ""; break;}
     case 2:{formIntentosCodigoSecreto.innerHTML = ""; divHistorialIntentos.innerHTML = ""; div.innerHTML = ""; break;}
-    case 3:{}
-    case 4:{}
+    case 3:{formIntentosCodigoSecreto.innerHTML = ""; divHistorialIntentos.innerHTML = ""; div.innerHTML = ""; break;}
+    case 4:{formIntentosCodigoSecreto.innerHTML = ""; divHistorialIntentos.innerHTML = ""; div.innerHTML = ""; break;}
   }
 }
 
@@ -46,7 +46,7 @@ function mostrarVista(vista){
     case 1:{formCodigoSecreto.innerHTML = getVista1(); break;}
     case 2:{formIntentosCodigoSecreto.innerHTML = getVista2(numeroCaracteres, numeroIntentosRealizados); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
     case 3:{formIntentosCodigoSecreto.innerHTML = getVista3(numeroCaracteres, numeroIntentosRealizados, codigoSecreto); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
-    case 4:{}
+    case 4:{formIntentosCodigoSecreto.innerHTML = getVista4(numeroCaracteres, numeroIntentosRealizados, codigoSecreto); divHistorialIntentos.innerHTML = historialIntentos; div.innerHTML = ""; break;}
   }
 }
 
@@ -54,6 +54,10 @@ function comprobarJuego(jugador){
   if (jugador == "Ganador"){
     limpiarVista(2);
     mostrarVista(3);
+  }
+  if(jugador == "Perdedor"){
+    limpiarVista(2);
+    mostrarVista(4);
   }
 }
 
