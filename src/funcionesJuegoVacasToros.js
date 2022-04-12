@@ -61,9 +61,17 @@ class FuncionesDeJuego{
     }
 
     generarVacas(codigoSecreto, intentoCodigo, resultadoDeIntento){
-        for(var i = 0; i < codigoSecreto.length; i++){
-            if(codigoSecreto[i] == intentoCodigo[0]){
-                resultadoDeIntento[0] = "V";
+        let listaRepetidos = this.generarCodigoVacioYLleno(codigoSecreto.length, false);
+        
+        for(var  intCod= 0; intCod < intentoCodigo.length; intCod++){
+            for(var codSec = 0; codSec < codigoSecreto.length; codSec++){
+                if(!listaRepetidos[codSec]){
+                    if(codigoSecreto[codSec] == intentoCodigo[intCod]){
+                        listaRepetidos[codSec] = true;
+                        resultadoDeIntento[intCod] = "V";
+                        break;
+                    }
+                }
             }
         }
         return resultadoDeIntento;
