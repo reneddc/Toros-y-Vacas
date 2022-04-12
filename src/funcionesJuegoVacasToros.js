@@ -43,12 +43,12 @@ class FuncionesDeJuego{
         return this.codigoSecretoAutomatico;
     }
 
-    generarCodigoVacio(numeroCaracteres){
-        this.codigoSecretoAutomatico = [];
+    generarCodigoVacioYLleno(numeroCaracteres, caracter){
+        let codigoAuxiliar = [];
         for(var i = 0; i < numeroCaracteres; i++){
-            this.codigoSecretoAutomatico.push("");
+            codigoAuxiliar.push(caracter);
         }
-        return this.codigoSecretoAutomatico;
+        return codigoAuxiliar;
     }
 
     generarCodigoSecretoPorDefault(numeroCaracteres, tipoCodigo, generarCodAut){
@@ -56,15 +56,13 @@ class FuncionesDeJuego{
             return this.generarCodigoSecretoAut(numeroCaracteres, tipoCodigo);
         }
         else{
-            return this.generarCodigoVacio(numeroCaracteres);
+            this.codigoSecretoAutomatico = this.generarCodigoVacioYLleno(numeroCaracteres, "")
+            return this.codigoSecretoAutomatico;
         }
     }
 
     generarResultadoDeIntento(numeroCaracteres){
-        this.resultadoIntento = [];
-        for(var i = 0; i < numeroCaracteres; i++){
-            this.resultadoIntento.push("O");
-        }
+        this.resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
         return this.resultadoIntento;
     }
 }
