@@ -75,18 +75,6 @@ class ExcepcionesVacasToros{
         }
         return this.controlarTipoCaracteresCodigoSecreto(codigoSecreto, numeroCaracteres, tipoCodigo);
     }
-
-    controlarIntentoCodigoSecreto(intentoCodigo, numeroCaracteres, tipoCodigo, resultadoCodigo){
-        let controlDeError;
-        if(!this.esCodigoSecretoCompleto(intentoCodigo, numeroCaracteres)){
-            return "Código secreto incompleto";
-        }
-        controlDeError = this.controlarTipoCaracteresCodigoSecreto(intentoCodigo, numeroCaracteres, tipoCodigo)
-        if(typeof(controlDeError) == "string"){
-            return controlDeError;
-        }
-        return resultadoCodigo;
-    }
 }
 
 export default ExcepcionesVacasToros;

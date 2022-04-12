@@ -61,10 +61,18 @@ class FuncionesDeJuego{
         }
     }
 
-    generarResultadoDeIntento(numeroCaracteres){
-        this.resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
-        return this.resultadoIntento;
+    generarResultadoDeIntento(numeroCaracteres, resultadoIntento){
+        if(!this.esError(resultadoIntento)){
+            this.resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
+            return this.resultadoIntento;
+        }
+        return resultadoIntento;
     }
+
+    esError(resultadoIntento){
+        return typeof(resultadoIntento) == "string";
+    }
+
 }
 
 export default FuncionesDeJuego;
