@@ -337,4 +337,12 @@ describe("VACAS Y TOROS", () => {
         expect(respuesta).toEqual("0 / 6 Intentos");
     });
 
+    it("19.2. Si el adivinador ingresó un intento, debería mostrar <1/10 intentos>", () => {
+        vacasToros.definirConfiguracionTotal(4, 6, "Letras", false);
+        vacasToros.definirCodigoSecreto(['P', 'W', 'T', 'C']);
+        vacasToros.definirIntento(['P', 'W', 'T', 'C']);
+        respuesta = vacasToros.getIntentosRealizados();
+        expect(respuesta).toEqual("1 / 6 Intentos");
+    });
+
 });

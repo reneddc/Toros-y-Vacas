@@ -1,7 +1,7 @@
 class FuncionesDeJuego{
 
     constructor(){
-        this.numeroIntentosRealizados = 0;
+        this.numeroIntentosRealizados;
         this.codigoSecretoAutomatico = [];
         this.listaRepetidos = [];
     }
@@ -53,6 +53,7 @@ class FuncionesDeJuego{
     }
 
     generarCodigoSecretoPorDefault(numeroCaracteres, tipoCodigo, generarCodAut){
+        this.numeroIntentosRealizados = 0;
         if(generarCodAut){
             return this.generarCodigoSecretoAut(numeroCaracteres, tipoCodigo);
         }
@@ -98,6 +99,7 @@ class FuncionesDeJuego{
             resultadoIntento = this.generarCodigoVacioYLleno(numeroCaracteres, "O");
             resultadoIntento = this.generarToros(codigoSecreto, intentoCodigo, resultadoIntento);
             resultadoIntento = this.generarVacas(codigoSecreto, intentoCodigo, resultadoIntento);
+            this.numeroIntentosRealizados++;
         }
         return resultadoIntento;
     }
